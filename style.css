@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 43 67% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 43 67% 46%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 228 45% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 228 39% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 228 39% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 43 67% 46%;
+    --primary-foreground: 228 45% 7%;
+
+    --secondary: 228 30% 16%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 228 25% 18%;
+    --muted-foreground: 217 19% 65%;
+
+    --accent: 228 30% 16%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 228 25% 18%;
+    --input: 228 25% 18%;
+    --ring: 43 67% 46%;
+  }
+}
+
+/* Custom styles & scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Range input accent */
+input[type='range'] {
+  accent-color: #ea580c;
+}
+
+/* Leaflet tile styling - Stable dark tone without tile destruction */
+.leaflet-dark-tiles .leaflet-tile {
+  filter: brightness(0.75) contrast(1.15) saturate(0.85);
+}
+
+.custom-marker-icon {
+  background: transparent;
+  border: none;
+}
+
+/* Ensure Leaflet popups and tooltips render above all map controls and tiles */
+.leaflet-popup-pane {
+  z-index: 1500 !important;
+}
+
+.leaflet-tooltip-pane {
+  z-index: 1400 !important;
+}
+
+/* Custom styled Leaflet popup with high contrast dark/light support */
+.vyapar-map-popup .leaflet-popup-content-wrapper {
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1.5px solid rgba(197, 155, 39, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  padding: 4px;
+}
+
+.vyapar-map-popup .leaflet-popup-tip {
+  background: #0f172a;
+  border: 1.5px solid rgba(197, 155, 39, 0.6);
+}
+
+.vyapar-map-popup .leaflet-popup-content {
+  margin: 10px 12px;
+  line-height: 1.45;
+}
+
+.vyapar-map-popup a.leaflet-popup-close-button {
+  color: #94a3b8;
+  padding: 6px;
+  top: 6px;
+  right: 6px;
+}
+
+.vyapar-map-popup a.leaflet-popup-close-button:hover {
+  color: #f1f5f9;
+}
+
+:root:not(.dark) .vyapar-map-popup .leaflet-popup-content-wrapper {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1.5px solid rgba(197, 155, 39, 0.6);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+}
+
+:root:not(.dark) .vyapar-map-popup .leaflet-popup-tip {
+  background: #ffffff;
+  border: 1.5px solid rgba(197, 155, 39, 0.6);
+}
+
+:root:not(.dark) .vyapar-map-popup a.leaflet-popup-close-button {
+  color: #64748b;
+}
+
+/* Custom styled tooltip */
+.leaflet-tooltip {
+  background: #0f172a !important;
+  color: #f8fafc !important;
+  border: 1px solid rgba(197, 155, 39, 0.4) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4) !important;
+  padding: 4px 8px !important;
+}
+
+:root:not(.dark) .leaflet-tooltip {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid rgba(197, 155, 39, 0.4) !important;
+}
+
